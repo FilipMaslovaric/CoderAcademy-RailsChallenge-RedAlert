@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CoderAcademyRailschallengeRedalert</title>
+    <title>Department of Defense of the United States of America</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,5 +10,14 @@
 
   <body>
     <%= yield %>
+    <% if user_signed_in? %>
+      <p>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      </p>
+      <% else %>
+      <p>
+        <%= link_to('Login', new_user_session_path)  %>
+      </p>
+    <% end %>
   </body>
 </html>

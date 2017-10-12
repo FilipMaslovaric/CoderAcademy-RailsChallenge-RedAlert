@@ -1,0 +1,14 @@
+<% if current_user.has_role? :potus %>
+<h1> Greetings, Mr. President </h1>
+<h4> Your code: <%= @potuskey %></h4>
+<%elsif current_user.has_role? :dod %>
+<h1> Welcome, Mr. Secretary </h1>
+<h4> Your code: <%= @dodkey %></h4>
+<% elsif current_user.has_role? :pinko %>
+<h1> Tovarish, comrade </h1>
+<h4> Here is the full launch code sequence: <%= @launchkey %></h4>
+<h2> GLORY TO THE MOTHERLAND </h2>
+<% else %>
+<h1> //UNAUTHORIZED ACCESS// </h1>
+<h2> Dispatching drones </h2>
+<% end %>
